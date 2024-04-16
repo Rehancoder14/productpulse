@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const connectDb = require('./src/connection/db');
 const os = require('os');
 dotenv.config();
-const authRouter = require('./src/routes/auth-routes');
+// const authRouter = require('./src/routes/auth-routes');
 const prodRouter = require('./src/routes/product-route')
 const errorHandler = require('./src/middleware/error-handler');
 connectDb();
@@ -18,7 +18,7 @@ console.log(`Connecting to ${appAddress}`);
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
-app.use( '/api/auth',authRouter);
+// app.use( '/api/auth',authRouter);
 
 app.use('/api/product', prodRouter)
 
