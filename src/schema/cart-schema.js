@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const cartSchema = new mongoose.Schema(
   {
-    product: { type: Object, ref: 'Product' },
+    product: { type: Object, },
     count: {
       type: Number,
       default: 1,

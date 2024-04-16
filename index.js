@@ -12,9 +12,6 @@ connectDb();
 const app = express();
 
 const port = process.env.PORT || 3000;
-const appIp = os.networkInterfaces();
-const appAddress = `http://${appIp}:${port}/`;
-console.log(`Connecting to ${appAddress}`);
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
