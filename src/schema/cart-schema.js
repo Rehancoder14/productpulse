@@ -1,13 +1,12 @@
 const mongoose = require('mongoose');
 
+
 const cartSchema = new mongoose.Schema(
   {
-    product: { type: Object, },
-    count: {
-      type: Number,
-      default: 1,
-      required : true
-    }
+    product: String,
+
+    image: String,
+    buyLink: String,
   },
   { timestamps: true }
 );

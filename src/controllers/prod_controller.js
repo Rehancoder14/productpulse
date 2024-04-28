@@ -40,17 +40,16 @@ const getProduct = async(req, res)=>{
 
 const addToCart = async(req, res)=>{
     try{
-        const {id} = req.body;
-        console.log(id);
-        let product = await Product.findOne({_id: id});
-        console.log(product);
-        if(!product){
-            return res.status(404).json({
+        const {product, image, buyLink} = req.body;
+        if( !product || !image || !buyLink){
+            return res.status(400).json({
                 error: true,
-                message: "Product not found",
-            });
-        }
-        let cart = await Cart.create({product: product});
+                message: "Please add all the fields",
+            });}
+
+       let cart = await Cart.create({product, image, buyLink});
+        
+       
         return res.status(200).json({
             error: false,
             message: "Product fetched successfully",
